@@ -12,7 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    {import = 'pippy.plugins'}
+    {import = 'pippy.plugins'},
+    {import = 'pippy.plugins.lsp'},
 }, 
 {
     root = vim.fn.stdpath("data") .. "/lazy", -- directory where plugins will be installed

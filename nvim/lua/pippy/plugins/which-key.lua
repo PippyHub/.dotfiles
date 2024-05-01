@@ -16,7 +16,7 @@ return {
         wk.register({
             l = {
                 name = "lazy",
-                l = { "<cmd>Lazy<cr>", "Open Lazy Menu" },
+                { "<cmd>Lazy<cr>", "Open Lazy Menu" },
             },
             f = {
                 name = "telescope",
@@ -37,6 +37,10 @@ return {
                 ["7"] = { function() harpoon:list():select(7) end, "Open Harpoon 7" },
                 ["8"] = { function() harpoon:list():select(8) end, "Open Harpoon 8" },
                 ["9"] = { function() harpoon:list():select(9) end, "Open Harpoon 9" },
+            },
+            u = {
+                name = "undotree",
+                { "<cmd>UndotreeToggle<cr>", "Toggle Undotree" },
             },
         },
         {

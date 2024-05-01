@@ -1,13 +1,15 @@
-local transparent_enabled = false
+local color = 0
 
-toggle_transparency = function()
-    transparent_enabled = not transparent_enabled
-    require('nightfox').setup({
-        options = {
-            transparent = transparent_enabled,
-        } 
-    })
-    vim.cmd("colorscheme nightfox")
+colorscheme_cycle = function()
+    if color == 0 then 
+        vim.cmd[[colorscheme tokyonight]]
+        color = color + 1
+    elseif color == 1 then
+        vim.cmd[[colorscheme nightfox]] 
+        color = 0
+    end
+
+
 end
-vim.cmd("command! ToggleTransparency lua toggle_transparency()")
+vim.cmd("command! ColorschemeCycle lua colorscheme_cycle()")
 
