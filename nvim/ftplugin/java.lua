@@ -1,5 +1,5 @@
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local workspace_dir = vim.env.HOME .. '/jdtls-workspace/' .. project_name
+local workspace_dir = vim.env.HOME .. '/Developer/jdtls-workspace/' .. project_name
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {

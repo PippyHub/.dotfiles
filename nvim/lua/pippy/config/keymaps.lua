@@ -7,4 +7,3 @@ map("n", "<Leader>ec", ":e " .. vim.fn.stdpath("config") .. "/init.lua<CR>", opt
 map('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
 map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
 map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
-
