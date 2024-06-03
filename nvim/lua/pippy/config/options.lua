@@ -3,7 +3,7 @@ vim.g.maplocalleader = " "
 
 local opt = vim.opt
 
-vim.opt.number = true
+opt.number = true
 opt.rnu = true
 
 opt.tabstop = 4
