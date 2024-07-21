@@ -5,8 +5,8 @@ return {
         "nvim-lua/plenary.nvim"
     },
     config = function()
-        require"startup".setup(
-        {theme = "melody"}
-        )
+        require"startup".setup({
+            theme = "melody"
+        })
     end
 }
