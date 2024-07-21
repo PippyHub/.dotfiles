@@ -25,9 +25,21 @@ return {
             end
         end
 
-        mason.setup({})
+        mason.setup({
+            ensure_installed = {
+                "java-debug-adapter",
+                "java-test",
+            },
+})
         masonlsp.setup({
-            ensure_installed = {},
+            ensure_installed = {
+                "clangd",
+                "cmake",
+                "cmake",
+                "jdtls",
+                "kotlin_language_server",
+                "lua_ls",
+            },
             handlers = {
                 default_setup,
             },
