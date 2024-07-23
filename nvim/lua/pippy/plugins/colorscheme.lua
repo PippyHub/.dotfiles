@@ -3,11 +3,11 @@ return {
     name = "catppuccin",
     priority = 1000,
     config = function()
-        --require("notify").setup({
-        --    background_colour = "#000000",
-        --})
+        require("notify").setup({
+            background_colour = "#cba6f7",
+        })
         require("catppuccin").setup({
-            flavour = "auto", -- latte, frappe, macchiato, mocha
+            flavour = "mocha", -- latte, frappe, macchiato, mocha
             background = { -- :h background
                 light = "latte",
                 dark = "mocha",
