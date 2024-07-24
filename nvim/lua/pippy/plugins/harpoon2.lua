@@ -8,8 +8,7 @@ return {
     config = function ()
         local harpoon = require("harpoon")
         harpoon:setup()
-        local wk = require("which-key")
-        wk.add({
+        require("which-key").add({
             mode = { "n" },
             { "<leader>h", group = "harpoon" },
             { "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "Open Harpoon Menu" },

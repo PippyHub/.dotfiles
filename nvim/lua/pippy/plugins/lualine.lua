@@ -1,18 +1,17 @@
 local colors = {
-    blue   = '#89b4fa',
-    sapphire   = '#74c7ec',
-    crust  = '#11111b',
-    text  = '#cdd6f4',
-    red    = '#f38ba8',
+    crust = '#11111b',
     mauve = '#cba6f7',
-    base = '#1e1e2e',
+    blue = '#89b4fa',
+    sapphire = '#74c7ec',
+    red = '#f38ba8',
+    background_color = '#f5c2e7'
 }
 
 local cattpuccin = {
     normal = {
         a = { fg = colors.crust, bg = colors.mauve },
-        b = { fg = colors.text, bg = colors.base },
-        c = { fg = colors.text },
+        b = { fg = colors.crust, bg = colors.background_color },
+        c = { fg = colors.crust },
     },
 
     insert = { a = { fg = colors.crust, bg = colors.blue } },
@@ -38,14 +37,10 @@ return {
         sections = {
             lualine_a = { { 'mode', right_padding = 2 } },
             lualine_b = { 'filename', 'branch' },
-            lualine_c = {
-                '%=', --[[ add your center compoentnts here in place of this comment ]]
-            },
-            lualine_x = {},
+            lualine_c = { },
+            lualine_x = { },
             lualine_y = { 'filetype', 'progress' },
-            lualine_z = {
-                { 'location', left_padding = 2 },
-            },
+            lualine_z = { { 'location', left_padding = 2 }, },
         },
         inactive_sections = {
             lualine_a = { 'filename' },
