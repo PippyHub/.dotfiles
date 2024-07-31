@@ -1,28 +1,25 @@
-local function get_transparency()
-    local result = vim.fn.system("iterm -t -get")
-    return tonumber(result:match("%S+"))
-end
-
 return {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = {
         spec = {
             mode = { "n" },
-            { "<leader>l", "<cmd>Lazy<cr>", desc = "Lazy Menu" },
+            { "<Leader>-", desc = "Netrw", icon = "" },
+            { "<leader>t", "<cmd>silent !iterm -t -to<cr>", desc = "Toggle Terminal Transparency" },
+            { "<Leader>e", "<cmd>execute 'edit'.stdpath('config')<cr>", desc = "Edit Neovim Config", icon = "" },
 
-            { "<leader>f", group = "file" },
-            { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-            { "<leader>fg", "<cmd>Telescope git_files<cr>", desc ="Find Git Files" },
-            { "<leader>fl", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
+            { "<leader>l", "<cmd>Lazy<cr>", desc = "Lazy Menu", icon = "💤" },
 
             { "<leader>u", "<cmd>UndotreeToggle<cr>", desc = "Toggle Undotree" },
 
-            { "<leader>T", function()
-                local transparency = (tonumber(string.format("%.1f", get_transparency())) == 0.2) and 0 or 0.2
-                vim.cmd(string.format("silent !iterm -t %.1f", transparency))
-            end, desc = "Toggle Terminal Transparency" },
+            { "<leader>f", group = "file" },
+            { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+            { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Find Git Files" },
+            { "<leader>fl", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
 
+            { "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", desc = "Show Diagnostic" },
+            { "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", desc = "Previous Diagnostic" },
+            { "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "Next Diagnostic" },
         },
     },
     keys = {
@@ -35,4 +32,3 @@ return {
         },
     },
 }
-

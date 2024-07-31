@@ -14,9 +14,9 @@ local cattpuccin = {
         c = { fg = colors.crust },
     },
 
-    insert = { a = { fg = colors.crust, bg = colors.blue } },
-    visual = { a = { fg = colors.crust, bg = colors.sapphire } },
-    replace = { a = { fg = colors.crust, bg =colors.red } },
+    insert  = { a = { fg = colors.crust, bg = colors.blue } },
+    visual  = { a = { fg = colors.crust, bg = colors.sapphire } },
+    replace = { a = { fg = colors.crust, bg = colors.red } },
 
     inactive = {
         a = { fg = colors.text, bg = colors.crust },

@@ -30,7 +30,8 @@ return {
                 "java-debug-adapter",
                 "java-test",
             },
-})
+        })
+
         masonlsp.setup({
             ensure_installed = {
                 "clangd",
@@ -44,6 +45,7 @@ return {
                 default_setup,
             },
         })
+
         masontool.setup({})
 
         cmp.setup({
