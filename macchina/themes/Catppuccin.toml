@@ -1,0 +1,38 @@
+spacing             = 1
+padding             = 1
+hide_ascii          = false
+prefer_small_ascii  = false
+separator           = ">>"
+key_color           = "#cba6f7"
+separator_color     = "#f5c2e7"
+
+[palette]
+type    = "Dark"
+#glyph  = "   "
+#glyph  = "   "
+#glyph  = "   "
+#glyph  = "   "
+glyph   = "   "
+visible = true
+
+[bar]
+glyph = "◇"
+symbol_open = ' '
+symbol_close = ' '
+hide_delimiters = true
+visible = false
+
+[box]
+title   = "Macchina"
+border  = "rounded"
+visible = true
+
+[box.inner_margin]
+x = 0
+y = 0
+
+[keys]
+machine     = "Mac"
+cpu_load    = "CPU %"
+terminal    = "Term"
+packages    = "Pkgs"
