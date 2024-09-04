@@ -1,6 +1,0 @@
-.DS_Store
-/iterm2
-/spicetify/*
-!spicetify/config-xpui.ini
-!spicetify/Themes/text/color.ini
-!spicetify/Themes/text/user.css
