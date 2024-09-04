@@ -1,4 +1,5 @@
 local cmd = vim.api.nvim_create_autocmd
+local group = vim.api.nvim_create_augroup
 local map = vim.keymap.set
 
 cmd('LspAttach', {

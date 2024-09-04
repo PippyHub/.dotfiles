@@ -1,7 +1,10 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
+local g = vim.g
 local opt = vim.opt
+
+g.maplocalleader = " "
+g.mapleader = " "
+
+opt.swapfile = false
 
 opt.number = true
 opt.rnu = true
@@ -21,3 +24,5 @@ opt.incsearch = true
 opt.termguicolors = true
 
 opt.scrolloff = 8
+
+opt.mouse = ""
