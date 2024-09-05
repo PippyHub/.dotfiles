@@ -1,5 +1,6 @@
 local cmd = vim.api.nvim_create_autocmd
 local group = vim.api.nvim_create_augroup
+local opts = { noremap = true, silent = true }
 local map = vim.keymap.set
 
 cmd('LspAttach', {
@@ -17,4 +18,13 @@ cmd('LspAttach', {
         map({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
         map('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
     end
+})
+
+cmd('FileType', {
+    pattern = 'java',
+    desc = 'Set up Gradle commands for Java files',
+    callback = function()
+        map('n', '<leader>gb', "<cmd>TermExec cmd='./gradlew build'<cr>", opts)
+        map('n', '<leader>gr', "<cmd>TermExec cmd='./gradlew run'<cr>", opts)
+    end,
 })

@@ -2,8 +2,6 @@ local gradle = function(command)
     vim.cmd("TermExec cmd='./gradlew " .. command .. "'")
 end
 
-local harpoon = require("harpoon")
-harpoon:setup()
 require("which-key").add({
     mode = { "n" },
     { "<leader>g", group = "Gradle", icon = "󰙵" },

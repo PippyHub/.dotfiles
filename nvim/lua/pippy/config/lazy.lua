@@ -14,13 +14,13 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     spec = {
         { import = 'pippy.plugins' },
---        { import = 'pippy.plugins.lsp' },
+        { import = 'pippy.plugins.lsp' },
     },
     defaults = {
         lazy = true, -- should plugins be lazy-loaded?
     },
     install = {
-        colorscheme = { "elflord" },
+        colorscheme = { "peachpuff" },
     },
     ui = {
         border = "rounded",

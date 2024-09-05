@@ -29,23 +29,17 @@ return {
             }):find()
         end
 
-
         local list = harpoon:list()
-
-        require("which-key").add({
-            mode = { "n" },
-            { "<leader>h", group = "harpoon", icon = "󰛢" },
-            { "<leader>hh", function() ui(list)         end, desc = "Open Harpoon Menu" },
-            { "<leader>ha", function() list:add()       end, desc = "Add Harpoon"       },
-            { "<leader>h1", function() list:select(1)   end, desc = "Open Harpoon 1"    },
-            { "<leader>h2", function() list:select(2)   end, desc = "Open Harpoon 2"    },
-            { "<leader>h3", function() list:select(3)   end, desc = "Open Harpoon 3"    },
-            { "<leader>h4", function() list:select(4)   end, desc = "Open Harpoon 4"    },
-            { "<leader>h5", function() list:select(5)   end, desc = "Open Harpoon 5"    },
-            { "<leader>h6", function() list:select(6)   end, desc = "Open Harpoon 6"    },
-            { "<leader>h7", function() list:select(7)   end, desc = "Open Harpoon 7"    },
-            { "<leader>h8", function() list:select(8)   end, desc = "Open Harpoon 8"    },
-            { "<leader>h9", function() list:select(9)   end, desc = "Open Harpoon 9"    },
-        })
+        local opts = { noremap = true, silent = true }
+        local map = vim.keymap.set
+         
+        map('n', '<leader>hh', function() ui(list) end, opts)
+        map('n', '<leader>ha', function() list:add() end, opts)
+        map('n', '<leader>hm', function() harpoon.ui:toggle_quick_menu(list) end, opts)
+        
+        for i = 1, 9 do
+            map('n', string.format('<leader>h%d', i), function() list:select(i) end, opts)
+        end
     end,
 }
+

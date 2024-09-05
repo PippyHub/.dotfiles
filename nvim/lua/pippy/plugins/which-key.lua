@@ -1,36 +1,43 @@
 return {
     "folke/which-key.nvim",
-    lazy = false,
+    event = "VeryLazy",
     opts = {
+        preset = "helix",
         spec = {
             mode = { "n" },
-            { "<Leader>-", desc = "Netrw", icon = "" },
-            { "<leader>t", "<cmd>silent !iterm -t -to<cr>", desc = "Toggle Terminal Transparency" },
-            { "<Leader>e", "<cmd>execute 'edit'.stdpath('config')<cr>", desc = "Edit Neovim Config", icon = "" },
-
-            { "<leader>l", "<cmd>Lazy<cr>", desc = "Lazy Menu", icon = "💤" },
-
-            { "<leader>u", "<cmd>UndotreeToggle<cr>", desc = "Toggle Undotree" },
-
-            { "<leader>d", "<cmd>Noice dismiss<cr>", desc = "Dismiss Notifications"},
-
             { "<leader>f", group = "File" },
-            { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-            { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Find Git Files" },
-            { "<leader>fl", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
+            { "<leader>h", group = "Harpoon" },
 
-            { "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", desc = "Show Diagnostic" },
-            { "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", desc = "Previous Diagnostic" },
-            { "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "Next Diagnostic" },
+            { "<leader>d", desc = "Dismiss Notifications" },
+            { "<Leader>e", desc = "Edit Neovim Config" },
+            { "<Leader>l", desc = "Lazy Menu" },
+            { "<Leader>t", desc = "Terminal Transperancy" },
+            { "<Leader>u", desc = "Toggle Undotree" },
+        },
+        icons = {
+            mappings = false,
+        },
+        win = {
+            no_overlap = true,
+            col = 0, -- positions the window on the left side
+            -- You can also adjust the width and row if needed
+            -- width = 20, -- adjust width as necessary
+            -- row = 0, -- set row position if you need to adjust it
+            padding = { 1, 2 }, -- extra window padding [top/bottom, right/left]
+            title = true,
+            title_pos = "center",
+            zindex = 1000,
+            bo = {},
+            wo = {},
         },
     },
     keys = {
         {
             "<leader>?",
             function()
-                require("which-key").show({ global = false })
+                require("which-key").show()
             end,
-            desc = "Buffer Local Keymaps (which-key)",
+            desc = "Buffer Local Keymaps" 
         },
     },
 }
