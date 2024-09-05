@@ -1,14 +1,3 @@
-local gradle = function(command)
-    vim.cmd("TermExec cmd='./gradlew " .. command .. "'")
-end
-
-require("which-key").add({
-    mode = { "n" },
-    { "<leader>g", group = "Gradle", icon = "󰙵" },
-    { "<leader>gb", function() gradle('build') end, desc = "Build Gradlew" },
-    { "<leader>gr", function() gradle('run') end, desc = "Run Gradlew" },
-})
-
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local workspace_dir = vim.env.HOME .. '/Developer/jdtls-workspace/' .. project_name
 

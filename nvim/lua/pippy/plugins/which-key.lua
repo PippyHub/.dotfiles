@@ -7,6 +7,7 @@ return {
             mode = { "n" },
             { "<leader>f", group = "File" },
             { "<leader>h", group = "Harpoon" },
+            { "<leader>g", group = "Gradle" },
 
             { "<leader>d", desc = "Dismiss Notifications" },
             { "<Leader>e", desc = "Edit Neovim Config" },

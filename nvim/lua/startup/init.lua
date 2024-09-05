@@ -58,14 +58,13 @@ end
 _G.startup = function(config)
     opts = config
 
-    theme = require(opts.theme)
+    theme = require('startup.themes.' .. opts.theme)
 
     if vim.fn.bufname('%') ~= '' then
         return
     end
 
     buf_setup()
-
     draw()
 end
 
@@ -75,7 +74,7 @@ cmd('VimEnter', {
     desc = 'Run startup file when nvim opens',
     callback = function()
         _G.startup({
-            theme = 'lua.pippy.startup.themes.melody',
+            theme = 'melody',
         })
     end,
 })

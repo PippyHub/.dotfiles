@@ -32,11 +32,11 @@ return {
         local list = harpoon:list()
         local opts = { noremap = true, silent = true }
         local map = vim.keymap.set
-         
+
         map('n', '<leader>hh', function() ui(list) end, opts)
         map('n', '<leader>ha', function() list:add() end, opts)
         map('n', '<leader>hm', function() harpoon.ui:toggle_quick_menu(list) end, opts)
-        
+
         for i = 1, 9 do
             map('n', string.format('<leader>h%d', i), function() list:select(i) end, opts)
         end
