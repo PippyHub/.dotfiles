@@ -56,9 +56,10 @@ local draw = function()
 end
 
 _G.startup = function(config)
-    opts = config
+    opts = config or {}
+    local directory = opts.directory or 'startup.themes'
 
-    theme = require('startup.themes.' .. opts.theme)
+    theme = require(directory .. '.' .. opts.theme)
 
     if vim.fn.bufname('%') ~= '' then
         return
@@ -75,6 +76,7 @@ cmd('VimEnter', {
     callback = function()
         _G.startup({
             theme = 'melody',
+            directory = nil, -- lua.startup.themes by default
         })
     end,
 })
