@@ -4,8 +4,9 @@ end
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-alias fzf "fzf --preview='cat {}'"
-alias fdir "cd (fzf --preview='cat {}' --walker=dir)"
+alias fzf "fzf --preview 'bat --style=numbers --color=always {}'"
+
+alias fdir "cd (fzf --preview='bat --style=numbers --color=always {}' --walker=dir)"
 
 set -x PATH /Users/piperinnshall/Developer/scripts/* $PATH
 

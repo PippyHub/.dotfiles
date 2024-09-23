@@ -1,0 +1,8 @@
+.DS_Store
+iterm2
+spicetify/Backup
+spicetify/CustomApps
+spicetify/Extensions      
+spicetify/Extracted       
+spicetify/Themes/*
+!/spicetify/Themes/text
